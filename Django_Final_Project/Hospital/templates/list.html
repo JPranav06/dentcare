@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <!-- Libraries Stylesheet -->
+
+    <link href="{%static 'owl.theme.default.css'%}" rel="stylesheet">
+     <link href="{%static 'owl.theme.default.min.css'%}" rel="stylesheet">
+    <link href="{%static 'owl.theme.green.css'%}" rel="stylesheet">
+    <link href="{%static 'owl.theme.green.min.css'%}" rel="stylesheet">
+    <link href="{%static 'animate.css'%}" rel="stylesheet">
+    <link href="{%static 'animate.min.css'%}" rel="stylesheet">
+    <link href="{%static 'tempusdominus-bootstrap-4.css'%}" rel="stylesheet">
+    <link href="{%static 'tempusdominus-bootstrap-4.min.css'%}" rel="stylesheet">
+    <link href="{%static 'twentytwenty.css'%}" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{%static 'bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{%static 'style.css'%}" rel="stylesheet">
+    <title>AppointmentList</title>
+</head>
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light ps-5 pe-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00 am - 10.00 pm, Sunday Closed </small>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-lg-end">
+                <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
+                    <div class="me-3 pe-3 border-end py-2">
+                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>pranavofficial12@gmail.com</p>
+                    </div>
+                    <div class="py-2">
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>8838523681</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+        <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="/" class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>DentCare</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="/" class="nav-item nav-link">Home</a>
+                <a href="about" class="nav-item nav-link active">About</a>
+                <a href="service" class="nav-item nav-link">Service</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="price" class="dropdown-item">Pricing Plan</a>
+                        <a href="team" class="dropdown-item">Our Dentist</a>
+                        <a href="testimonial" class="dropdown-item">Testimonial</a>
+                        <a href="appointment" class="dropdown-item">Appointment</a>
+                    </div>
+                </div>
+                <a href="contact" class="nav-item nav-link">Contact</a>
+            </div>
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+            <a href="appointment" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+<table border="5" class="table table-striped">
+    <tr>
+        <th>
+            Service
+        </th>
+         <th>
+            Doctor
+        </th>
+        <th>
+            Patient Name
+        </th>
+        <th>
+            Patient Email Address
+        </th>
+         <th>
+           Date
+        </th>
+    </tr>
+    {% for mydata in userdata %}
+        <tr>
+            <td>
+                {{ mydata.service }}
+            </td>
+            <td>
+                {{ mydata.doctor }}
+            </td>
+            <td>
+                {{ mydata.name }}
+            </td>
+            <td>
+                {{ mydata.email }}
+            </td>
+            <td>
+                {{ mydata.date1 }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+            <a href="appointment" class="btn btn-danger py-2 px-4 ms-3" style="width:20%;margin-left:50rem !important" >Make Another Appointment</a>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{%static 'wow.js'%}"></script>
+    <script src="{%static 'wow.min.js'%}"></script>
+    <script src="{%static 'easing.js'%}"></script>
+    <script src="{%static 'easing.min.js'%}"></script>
+    <script src="{%static 'waypoints.min.js'%}"></script>
+    <script src="{%static 'owl.carousel.js'%}"></script>
+    <script src="{%static 'owl.carousel.min.js'%}"></script>
+    <script src="{%static 'moment.min.js'%}"></script>
+    <script src="{%static 'moment-timezone.min.js'%}"></script>
+    <script src="{%static 'tempusdominus-bootstrap-4.js'%}"></script>
+    <script src="{%static 'tempusdominus-bootstrap-4.min.js'%}"></script>
+    <script src="{%static 'jquery.event.move.js'%}"></script>
+    <script src="{%static 'jquery.twentytwenty.js'%}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'main.js'%}"></script>
+</body>
+</html>
